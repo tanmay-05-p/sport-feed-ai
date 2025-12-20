@@ -116,19 +116,33 @@ Check API health status.
 
 ## Using Different LLMs
 
-### Mistral 7B (Recommended)
+The app supports multiple LLM providers:
+
+### Local (Ollama)
 
 ```bash
 ollama pull mistral
-```
-
-### LLaMA 3 8B
-
-```bash
+# or
 ollama pull llama3
 ```
 
-Update `LLM_MODEL` in your `.env` file accordingly.
+### Cloud Providers
+
+Set `LLM_PROVIDER` in `.env`:
+
+- `groq` - Groq Cloud (fast inference)
+- `openrouter` - OpenRouter (multiple models)
+- `together` - Together AI
+- `openai` - OpenAI API
+
+Update `LLM_MODEL` and add provider API key accordingly.
+
+## Responsive Design
+
+The UI is fully responsive and works on:
+- Mobile phones (320px+)
+- Tablets (768px+)
+- Desktops (1024px+)
 
 ## License
 
