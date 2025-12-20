@@ -1,0 +1,25 @@
+{
+  "name": "sportsfeed-ai",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspaces --if-present",
+    "dev:api": "npm run dev --workspace=@sports-ai/api",
+    "dev:web": "npm run dev --workspace=@sports-ai/web",
+    "build": "npm run build:packages && npm run build:apps",
+    "build:packages": "npm run build --workspace=@sports-ai/shared && npm run build --workspace=@sports-ai/prompts",
+    "build:apps": "npm run build --workspace=@sports-ai/api && npm run build --workspace=@sports-ai/web",
+    "lint": "npm run lint --workspaces --if-present",
+    "clean": "rm -rf node_modules apps/*/node_modules packages/*/node_modules apps/*/.next packages/*/dist apps/*/dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
